@@ -9,11 +9,11 @@ using TaskManagementWebApp.Data;
 
 #nullable disable
 
-namespace TaskManagementWebApp.Migrations
+namespace TaskManagementWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231110220120_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231112161448_AddProjectTask")]
+    partial class AddProjectTask
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -233,6 +233,13 @@ namespace TaskManagementWebApp.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectTaskId"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()

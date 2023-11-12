@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-TaskManagementWebApp-27a3b160-8ce4-41a7-891b-cb21ca3c0061</UserSecretsId>
+    <UserSecretsId>aspnet-TaskManagementWebApp-4954c535-9768-4013-a6f5-3d867da37043</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
