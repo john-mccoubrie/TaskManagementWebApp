@@ -21,6 +21,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.DueDate)
             </th>
+            <th>
+                Assigned To
+            </th>
+            <th>
+                Status
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +41,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedUser.UserName)
+            </td>
+            <td>
+                @item.Status.ToString()
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProjectTaskId">Edit</a> |

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,12 @@ namespace TaskManagementWebApp.Controllers
 {
     public class ProjectTasksController : Controller
     {
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
 
-        public ProjectTasksController(ApplicationDbContext context)
+        public ProjectTasksController(UserManager<IdentityUser> userManager, ApplicationDbContext context)
         {
+            _userManager = userManager;
             _context = context;
         }
 
@@ -35,8 +38,7 @@ namespace TaskManagementWebApp.Controllers
                 return NotFound();
             }
 
-            var projectTask = await _context.ProjectTasks
-                .FirstOrDefaultAsync(m => m.ProjectTaskId == id);
+            var projectTask = await _context.ProjectTasks.Include(t => t.AssignedUser).FirstOrDefaultAsync(m => m.ProjectTaskId == id);
             if (projectTask == null)
             {
                 return NotFound();
@@ -48,6 +50,8 @@ namespace TaskManagementWebApp.Controllers
         // GET: ProjectTasks/Create
         public IActionResult Create()
         {
+            ViewBag.Users = new SelectList(_userManager.Users.ToList(), "Id", "UserName");
+            ViewBag.Statuses = new SelectList(Enum.GetValues(typeof(ProjectTask.TaskStatus)));
             return View();
         }
 
@@ -56,7 +60,7 @@ namespace TaskManagementWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProjectTaskId,Title,Description,DueDate")] ProjectTask projectTask)
+        public async Task<IActionResult> Create([Bind("ProjectTaskId,Title,Description,DueDate,Status")] ProjectTask projectTask)
         {
             if (ModelState.IsValid)
             {
@@ -70,16 +74,22 @@ namespace TaskManagementWebApp.Controllers
         // GET: ProjectTasks/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.ProjectTasks == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var projectTask = await _context.ProjectTasks.FindAsync(id);
+        var projectTask = await _context.ProjectTasks
+        .Include(t => t.AssignedUser) // Access current AssignedUserId details
+        .FirstOrDefaultAsync(m => m.ProjectTaskId == id);
+
             if (projectTask == null)
             {
                 return NotFound();
             }
+            ViewBag.Users = new SelectList(_userManager.Users.ToList(), "Id", "UserName", projectTask.AssignedUserId);
+            ViewBag.Statuses = new SelectList(Enum.GetValues(typeof(ProjectTask.TaskStatus)));
+
             return View(projectTask);
         }
 
@@ -88,7 +98,7 @@ namespace TaskManagementWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectTaskId,Title,Description,DueDate")] ProjectTask projectTask)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectTaskId,Title,Description,DueDate, AssignedUserId, Status")] ProjectTask projectTask)
         {
             if (id != projectTask.ProjectTaskId)
             {
@@ -115,6 +125,8 @@ namespace TaskManagementWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Users = new SelectList(_userManager.Users.ToList(), "Id", "UserName", projectTask.AssignedUserId);
+            ViewBag.Statuses = new SelectList(Enum.GetValues(typeof(ProjectTask.TaskStatus)), projectTask.Status);
             return View(projectTask);
         }
 

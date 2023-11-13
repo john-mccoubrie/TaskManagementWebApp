@@ -29,6 +29,14 @@
                 <span asp-validation-for="DueDate" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="AssignedUserId">Assign To</label>
+                <select asp-for="AssignedUserId" asp-items="@ViewBag.Users" class="form-control"></select>
+            </div>
+            <div>
+                <label asp-for="Status">Status</label>
+                <select asp-for="Status" class="form-control" asp-items="@ViewBag.Statuses"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
