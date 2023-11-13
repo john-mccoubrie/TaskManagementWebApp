@@ -45,18 +45,12 @@ C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskMan
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -326,3 +320,4 @@ C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskMan
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\obj\Debug\net6.0\TaskManagementWebApp.pdb
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\obj\Debug\net6.0\TaskManagementWebApp.genruntimeconfig.cache
 C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\obj\Debug\net6.0\ref\TaskManagementWebApp.dll
+C:\Users\John\Documents\GitHub\TaskManagementWebApp\TaskManagementWebApp\TaskManagementWebApp\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

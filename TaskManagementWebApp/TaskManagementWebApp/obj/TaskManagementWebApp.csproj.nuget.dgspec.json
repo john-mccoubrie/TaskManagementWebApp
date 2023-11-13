@@ -58,7 +58,7 @@
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
